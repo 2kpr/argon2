@@ -13,5 +13,5 @@ key = argon2.low_level.hash_secret_raw(
   type=argon2.low_level.Type.ID
 )
 
-with open("key", "wb") as f:
+with open(getpass.getpass(prompt='Key File: ').encode(), "wb") as f:
 	f.write(key)
